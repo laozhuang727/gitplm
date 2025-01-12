@@ -32,4 +32,5 @@ htmlcov/
 # 项目特定
 releases/
 logs/
-*.log 
+*.log
+partmaster.csv 
