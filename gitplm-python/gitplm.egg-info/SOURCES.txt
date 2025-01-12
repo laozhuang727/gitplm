@@ -1,0 +1,15 @@
+README.md
+setup.py
+gitplm/__init__.py
+gitplm/bom.py
+gitplm/file_utils.py
+gitplm/ipn.py
+gitplm/main.py
+gitplm/partmaster.py
+gitplm.egg-info/PKG-INFO
+gitplm.egg-info/SOURCES.txt
+gitplm.egg-info/dependency_links.txt
+gitplm.egg-info/entry_points.txt
+gitplm.egg-info/requires.txt
+gitplm.egg-info/top_level.txt
+tests/test_main.py

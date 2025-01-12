@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: gitplm
+Version: 0.1.0
+Summary: A PLM (Product Lifecycle Management) tool based on Git
+Home-page: https://github.com/yourusername/gitplm-python
+Author: Python Version
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.0.0
+Requires-Dist: pyyaml>=5.1
+
+# GitPLM (Python Version)
+
+基于 Git 的产品生命周期管理工具的 Python 实现版本。
+
+## 功能特性
+
+- 产品版本发布管理
+- BOM（物料清单）管理
+- IPN（内部零件编号）处理
+- 文件版本控制
+
+## 安装
+
+```bash
+pip install -r requirements.txt
+python setup.py install
+```
+
+## 使用方法
+
+### 发布新版本
+
+```bash
+gitplm release PCB-056-0005
+```
+
+### 查看版本
+
+```bash
+gitplm --version
+```
+
+## 开发
+
+### 环境设置
+
+1. 克隆仓库
+2. 创建虚拟环境
+3. 安装依赖
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 运行测试
+
+```bash
+pytest
+```
+
+## 许可证
+
+MIT License
