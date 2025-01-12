@@ -17,6 +17,44 @@ GitPLM 的主要功能：
 - 创建包含所有子装配件的组合 BOM
 - 将设计中所有自制组件的发布数据收集到一个目录中，用于制造发布
 
+## 最近更新
+
+### 功能增强
+
+1. BOM 处理改进
+
+   - 优化了 BOM 行项目的添加和移除逻辑
+   - 支持按组件名称或引用移除项目
+   - 自动计算组件数量
+   - 按 IPN 排序输出结果
+
+2. 文件操作增强
+
+   - 更安全的文件复制机制
+   - 支持目录和文件的递归复制
+   - 自动创建目标目录结构
+   - 改进了文件覆盖处理逻辑
+
+3. 钩子脚本功能增强
+
+   - 增加了更多模板变量支持：
+     - ${IPN}: 内部零件编号
+     - ${SrcDir}: 源目录路径
+     - ${RelDir}: 目标目录路径
+     - ${Description}: 发布描述
+   - 新增环境变量支持：
+     - GITPLM_IPN: 内部零件编号
+     - GITPLM_SRC_DIR: 源目录路径
+     - GITPLM_REL_DIR: 目标目录路径
+     - GITPLM_DESCRIPTION: 发布描述
+   - 改进了跨平台兼容性
+   - 实时日志输出支持
+
+4. 错误处理改进
+   - 更详细的错误信息
+   - 改进了异常处理机制
+   - 增加了必需文件检查功能
+
 ## 安装
 
 ### 从源码安装
@@ -53,6 +91,18 @@ gitplm check-bom PCB-001-0001.csv
 
 # 查看版本
 gitplm --version
+```
+
+## 钩子脚本示例
+
+```yaml
+description: 修改 BOM 并运行钩子
+hooks:
+  # 使用模板变量
+  - echo "Processing ${IPN} (${Description})" > ${RelDir}/process.log
+
+  # 使用环境变量
+  - python scripts/generate_docs.py %GITPLM_IPN% %GITPLM_REL_DIR%
 ```
 
 ## 零件编号系统
