@@ -54,6 +54,18 @@ class BOM:
         """返回整个BOM的字符串表示"""
         return "\n".join(str(line) for line in self.lines)
     
+    def get_lines_by_ipn(self, ipn: IPN) -> List[BOMLine]:
+        """
+        获取指定IPN的所有行项目
+        
+        Args:
+            ipn: 要查找的IPN
+            
+        Returns:
+            匹配的BOM行列表
+        """
+        return [line for line in self.lines if line.ipn == ipn]
+    
     def merge_partmaster(self, partmaster: Partmaster, log_error: Callable[[str], None]) -> None:
         """
         将partmaster的属性合并到BOM中
